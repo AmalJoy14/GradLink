@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="/images/OpenTalkLogo.png">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/logout.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="logoutContainer">
+        <h1>Log out <i class="ri-logout-box-r-line"></i></h1>
+        <p>Are you sure you want to log out ?</p>
+        <div class="logoutButtonContainer">
+            <button class="button1">OK</button><button class="button2">CANCEL</button>
+        </div>
+    </div>
+    <div class="maindiv">
+        <div class="firstdiv">
+            <div class="firstinnerdiv">
+                <img src="/images/OpenTalkLogo.png" alt="logo">
+                <div class="optionlist">
+                    <a href="/profile" class="option"><i class="ri-map-pin-user-line"></i></a>
+                    <a href="/home" style="color: rgb(255, 102, 6);" class="option"><i
+                            class="ri-group-2-line friends"></i></a>
+                    <a href="/addUser" class="option"><i class="ri-user-add-line adduser"></i></a>
+                    <a href="/global" class="option"><i class="ri-earth-line global"></i></a>
+                </div>
+                <button class="logout"><i class="ri-logout-box-line"></i></button>
+            </div>
+            <div class="secondinnerdiv">
+                <div class="chatbox">
+                    <h1>Chat</h1>
+
+                    <form myUsername="<%=username%>" class="search" action="/home">
+                        <input id="seaarchInput" name="search" type="text" autocomplete="off" placeholder="Search user">
+                        <i class="ri-user-search-line"></i>
+                        <button class="searchBtn" type="submit"><i class="ri-search-line"></i></button>
+                    </form>
+
+                </div>
+                <div class="friendlistbox">
+                    <p>FRIENDLIST</p>
+                    <div class="friendlist">
+
+                        <!--  for (let friend of friendDetailsList){%>
+                            <div class="user1">
+                                <div class="userdetails">
+                                    <div class="profile" >
+                                        <img src="/images/uploads/= friend.profileImage %>" alt="Profile Image" onerror="this.onerror=null; this.src='/images/uploads/noProfileImage.png';">
+                                    </div>
+                                    <div class="description">
+                                        <h3>
+                                            =friend.fullname%>
+                                        </h3>
+                                        <h6>
+                                            =friend.username%>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                             } %> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="emptySecondDiv">
+            <img src="/images/hiddenLogo.png">
+            <h3>Select a user to start messaging</h3>
+        </div>
+        <div class="seconddiv hide">
+            <div class="thirdinnerdiv">
+                <div class="selecteduser">
+                    <div class="selecteduserprofile"><img ></div>
+                    <div class="selecteduserdetails">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+
+                </div>
+                <a class="menu"><i class="ri-menu-line"></i></a>
+
+            </div>
+            <div class="fourthinnerdiv">
+                <div id="homeMessagediv">
+                </div>
+
+                <form id="homeForm" action="">
+                    <textarea id="homeInput" placeholder="Enter your Message"></textarea>
+                    <button type="submit"><i class="ri-arrow-right-up-line"></i></button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/logout.js"></script>
+<script src="/javascripts/home.js"></script>
+
+</html>

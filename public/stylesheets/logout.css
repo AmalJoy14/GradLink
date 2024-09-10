@@ -1,0 +1,56 @@
+.logoutContainer{
+    display: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    position: fixed;
+    height: 230px;
+    width: 350px;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    border-radius: 7px;
+    overflow: hidden;
+}
+.show{
+    display: block;
+}
+.blur{
+    filter: blur(8px);
+    
+}
+.logoutContainer h1{
+    margin-top: 40px;
+}
+.logoutContainer p{
+    font-size:medium;
+    margin-top: 10px;
+}
+
+.logoutButtonContainer{
+    width:100%;
+    height:60px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.logoutButtonContainer button{
+    height: 40px;
+    width: 140px;
+    cursor: pointer;
+    font-size: large;
+    border-radius: 7px;
+    background-color:rgb(255, 102, 6);
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    color: white;
+}
+@media screen and (max-width :480px ) {
+    .logoutContainer{
+        width:320px;
+        top:50%;
+    }
+}
