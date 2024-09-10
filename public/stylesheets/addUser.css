@@ -26,13 +26,13 @@ body{
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     display:flex;
-    padding:20px 0px;
+    padding:1px 0px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 .firstinnerdiv>img{
-    max-width:45px;
+    max-width:75px;
 }
 .optionlist{
     display: flex;
@@ -51,7 +51,7 @@ body{
 
 }
 .option:hover{
-    color: #FF6606;  
+    color: #3077c9;  
 }
 
 .logout{
@@ -59,7 +59,7 @@ body{
     height:43px;
     cursor: pointer;
     text-decoration: none;
-    color: #FF6606;
+    color:#3077c9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@ body{
     height:100%;
     background-color: rgba(202, 21, 255, 0);
     border-radius: 10px;
-    background-color: #ed630d;
+    background-color:#3077c9;
     display: flex;
     gap:5px;
     justify-content: center;
@@ -121,7 +121,7 @@ input{
     border: none;
     height: 30px;
     width: 80px;
-    background-color: rgb(255, 102, 6);
+    background-color: #3077c9;
     color: white;
     font-weight: 500;
 }

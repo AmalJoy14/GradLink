@@ -33,13 +33,13 @@ body{
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     display:flex;
-    padding:20px 0px;
+    padding:1px 0px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 .firstinnerdiv>img{
-    max-width:45px;
+    max-width:75px;
 }
 .optionlist{
     display: flex;
@@ -57,14 +57,14 @@ body{
 
 }
 .option:hover{
-    color: #FF6606;  
+    color: #3077c9;  
 }
 .logout{
     width:43px;
     height:43px;
     cursor: pointer;
     text-decoration: none;
-    color:#FF6606;
+    color:#3077c9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,7 +113,7 @@ body{
     border-radius: 50%;
     border:none;
     color: white;
-    background-color: #FF6606;
+    background-color:#3077c9;
 }
 
 #globalMessagediv{
@@ -152,7 +152,7 @@ body{
     gap:35px;
     color: white;
     border-radius: 40px;
-    background-color: #FF6606;
+    background-color:#3077c9;
 }
 .globe{
     position: relative;
@@ -183,7 +183,7 @@ body{
     top: 0%;
     left:0%;
     font-size: 30px;
-    border: 2px solid rgb(255, 119, 0);
+    border: 2px solid #3077c9;
 }
 .fourthinnerdiv{
     width:100%;
@@ -231,7 +231,7 @@ body{
 }
 
 .onlineusers::-webkit-scrollbar-thumb {
-  background: #FF6606;
+  background: #3077c9;
   border-radius:0px;
 }
 .profile{
@@ -261,7 +261,7 @@ body{
 
 .mymessage>span{
     padding:5px 10px;
-    background-color: #FF6606;
+    background-color: #3077c9;
     border-radius: 20px;
     border-top-left-radius:0px;
     color:white;
@@ -302,7 +302,7 @@ body{
     font-size: 12px;
     font-family:'Segoe UI';
     font-weight: 500;
-    color:#FF6606;
+    color:#3077c9;
     display: flex;
     justify-content: flex-end;
 }
@@ -317,6 +317,6 @@ body{
 }
 
 #globalMessagediv::-webkit-scrollbar-thumb {
-  background: #FF6606;
+  background: #3077c9;
   border-radius:30px;
 }

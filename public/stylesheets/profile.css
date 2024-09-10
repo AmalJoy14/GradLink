@@ -34,13 +34,13 @@ body{
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     display:flex;
-    padding:20px 0px;
+    padding:1px 0px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 .firstinnerdiv>img{
-    max-width:45px;
+    max-width:75px;
 }
 .optionlist{
     display: flex;
@@ -59,7 +59,7 @@ body{
 
 }
 .option:hover{
-    color: #FF6606;  
+    color: #3077c9;  
 }
 
 .logout{
@@ -67,7 +67,7 @@ body{
     height:43px;
     cursor: pointer;
     text-decoration: none;
-    color: rgb(255, 102, 6);
+    color: #3077c9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +79,7 @@ body{
 .secondinnerdiv{
     width:100%;
     height:100%;
-    background-color: #FF6606;
+    background-color:#3077c9 ;
     border-radius: 10px;
     padding:10px;
     z-index: 0;
@@ -137,7 +137,7 @@ body{
     border-radius: 50%;
     margin-left: 40px;
     position: relative;
-    border: 2px solid #FF6606;
+    border: 2px solid #3077c9;
     display: flex;
     align-items: center;
     justify-content: center;
