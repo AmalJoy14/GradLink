@@ -7,7 +7,7 @@
     <title>GradLink</title>
 
     <link rel="icon" href="/images/GradLink.png">
-    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
 
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <div class="registerpage">
         <div class="register">
             <div class="logodiv">
@@ -27,16 +26,19 @@
                     alt="logo"><span>G</span><span>r</span><span>a</span><span>d</span><span>L</span><span>i</span><span>n</span><span>k</span>
             </div>
 
-            <form class="registerform" action="/login" method="post">
+            <form class="registerform" action="/register" method="post">
                 <div class="firstContainer">
-                    <p class="seemore">Login to your Account</p>
-                    
-                    <input type="text" name="username" placeholder="Username" required />
-                    <input type="password" name="password" placeholder="Password" required />
-                    <a class="nothaveaccount" href="./register">Don't have an account?</a>
+                    <p class="seemore">Make Account to see More!</p>
+                    <% if(existsError.length > 0){ %>
+                        <p class="error"><%= existsError %></p>
+                      <% } %>
+                    <input type="text" name="username" placeholder="Username" autocomplete="off" maxlength="20" pattern="^\S+$" title="Please enter username without spaces." required />
+                    <input type="text" name="fullname" placeholder="Full Name" autocomplete="off" maxlength="15" required />
+                    <input type="password" name="password" placeholder="Password" autocomplete="off" maxlength="15" pattern="^\S+$" title="Please enter password without spaces." required />
+                    <a class="nothaveaccount" href="./login">Already have an account?</a>
                 </div>
                 <div class="secondContainer">
-                    <button type="submit">Sign in</button>
+                    <button type="submit">Register</button>
                 </div>
             </form>
 
@@ -48,6 +50,5 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./javascripts/registerAndLogin.js"></script>
 </body>
-
 
 </html>

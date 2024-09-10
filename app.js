@@ -1,11 +1,17 @@
 import mongoose from "mongoose";
 import express from "express";
+import user from "./models/user.js";
 import passport from "passport";
 import localStrategy from "passport-local";
 import expressSession from "express-session";
 import flash from "connect-flash";
 import cookieParser from "cookie-parser";
 import device from 'express-device';
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/GradLink')
+    .then(() => console.log('Connected to MongoDB locally!'))
+    .catch((err) => console.error('Failed to connect to MongoDB:', err));
 
 const app = express();
 const PORT = 3000;
@@ -25,12 +31,12 @@ app.use(device.capture());
 ////////////////////////////////////////////////////////////
 passport.use(new localStrategy(user.authenticate()));
 app.use(
-  expressSession({
-    resave: false,
-    saveUninitialized: true,
-    secret: "hey",  
-    cookie: { secure: false, maxAge: 86400000 } 
-  })
+    expressSession({
+        resave: false,
+        saveUninitialized: true,
+        secret: "hey",
+        cookie: { secure: false, maxAge: 86400000 }
+    })
 );
 
 app.use(passport.initialize());
@@ -45,10 +51,62 @@ app.get("/", (req, res) => {
     res.render("start.ejs");
 });
 
-app.get("/home", (req,res) =>{
-    res.render("login.ejs");
-})
+app.get("/register", (req, res) => {
+    res.render("register.ejs", { existsError: req.flash("error") });
+});
 
-app.listen(PORT, ()=>{
+app.post("/register", (req, res, next) => {
+    const userData = new user({
+        username: req.body.username,
+        password: req.body.password,
+        fullname: req.body.fullname,
+    });
+    console.log(req.body);
+    user.register(userData, req.body.password, (err) => {
+        if (err) {
+            // If the error is due to a duplicate username
+            if (err.name === "UserExistsError") {
+                req.flash("error", "Username already exists.");
+                return res.redirect("/register");
+            }
+        }
+        // Registration successful
+        passport.authenticate("local")(req, res, () => {
+            res.redirect("/home");
+        });
+    });
+});
+
+app.get("/login", (req, res) => {
+    res.render("login.ejs", { error: req.flash("error") });
+});
+
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/home",
+    failureRedirect: "/login",
+    failureFlash: true,
+}));
+
+app.get("/home", isLoggedIn, (req, res) => {
+    const username = req.session.passport.user;
+    const searchName = req.query.search;
+    let redirectUrl = "/home/" + username;
+    if (searchName !== undefined) {
+        redirectUrl += "?search=" + searchName;
+    }
+    res.redirect(redirectUrl);
+});
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        if (!onlineUsers.includes(req.session.passport.user)) {
+            onlineUsers.push(req.session.passport.user);
+        }
+        return next();
+    }
+    res.redirect("/login");
+}
+
+app.listen(PORT, () => {
     console.log(`Listening to port ${PORT}`);
 })
