@@ -558,6 +558,6 @@ function isLoggedIn(req, res, next) {
     res.redirect("/login");
 }
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Listening to port ${PORT}`);
 })
