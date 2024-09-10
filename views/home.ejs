@@ -52,7 +52,7 @@
                     <p>FRIENDLIST</p>
                     <div class="friendlist">
 
-                        <!--  for (let friend of friendDetailsList){%>
+                        <%for (let friend of friendDetailsList){%>
                             <div class="user1">
                                 <div class="userdetails">
                                     <div class="profile" >
@@ -60,15 +60,15 @@
                                     </div>
                                     <div class="description">
                                         <h3>
-                                            =friend.fullname%>
+                                            <%=friend.fullname%>
                                         </h3>
                                         <h6>
-                                            =friend.username%>
+                                           <% =friend.username%>
                                         </h6>
                                     </div>
                                 </div>
                             </div>
-                             } %> -->
+                            <% } %>
 
                     </div>
                 </div>
