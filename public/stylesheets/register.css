@@ -1,0 +1,148 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    height:100svh;
+    width:100vw;
+}
+.risediv{
+    z-index: 99;
+    height:100%;
+    width:100%;
+    background-color: black;
+    position: fixed;
+}
+.mainlogodiv{
+    background: #000000;
+    font-family: "Noto Sans";
+    font-weight: 600;
+    font-size: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    
+    
+}
+
+.mainlogodiv>img{
+    width:8vw;
+}
+
+
+.registerpage{
+    
+    height:100%;
+    width:100%;
+    background-color: rgb(27, 26, 26);
+    position: relative;
+    
+}
+.register{
+    
+    display: flex;
+    gap:1px;
+    flex-direction: column;
+    border-radius: 10px;
+    height: 570px;
+
+    min-width:50vw;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top:50%;
+    left:50%;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+}
+.logodiv{
+    padding:20px 20px;
+    height:230px;
+   
+    background-color: rgb(0, 0, 0);
+    
+    border-radius: 10px;
+    color: white;
+    border: 3px solid white;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-family: "Noto Sans";
+    font-size:1.3cm;
+}
+.seemore{
+    color:white;
+    font-family: "Noto Sans";
+    font-size:25px;
+}
+.logodiv>img{
+    height:1.5cm;
+    width: 1.5cm;
+}
+.registerform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid white;
+    
+    padding: 20px 20px;
+    background-color: #000000;
+    border-radius: 10px;
+    height:100%;
+}
+.firstContainer{
+    gap:15px;
+    display: flex;
+    flex-direction: column;
+}
+.firstContainer>input{
+    height:1.3cm;
+    width:100%;
+    border: 1px solid white;
+    background-color: black;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: large;
+    color:white;
+}
+.nothaveaccount{
+    text-decoration: none;
+    font-size:medium;
+    color: rgb(45, 105, 183);
+    font-family: "Noto Sans";
+}
+.nothaveaccount:hover{
+    text-decoration: underline;
+}
+
+
+button{
+    cursor: pointer;
+    padding:15px 25px;
+    background-color: rgb(255, 102, 6);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: larger;
+    font-family: "Noto Sans";
+    width: 100%;
+    border:none;
+    
+}
+.error{
+    color:red;
+    font-family: "Noto Sans";
+}
+/*To Make the main animation appear in centre for mobile */
+@media screen and (max-width:480px) {
+    .mainlogodiv{
+        top:45%;    
+    }
+}
+
+
