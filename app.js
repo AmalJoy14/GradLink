@@ -1,18 +1,18 @@
 import mongoose from "mongoose";
 import express from "express";
 import user from "./models/user.js";
-// import { userSort, createRoomName ,returnPage} from './public/javascripts/functions.js';
+import { userSort, createRoomName ,returnPage} from './public/javascripts/functions.js';
 import passport from "passport";
 import localStrategy from "passport-local";
 import expressSession from "express-session";
 import flash from "connect-flash";
-// import { Server } from "socket.io";
-// import { createServer } from "node:http";
-// import globalChat from "./models/global.js";
-// import homeChat from "./models/home.js";
-// import multer from 'multer';
-// import { v4 as uuidv4 } from 'uuid';
-// import path from 'path';
+import { Server } from "socket.io";
+import { createServer } from "node:http";
+import globalChat from "./models/global.js";
+import homeChat from "./models/home.js";
+import multer from 'multer';
+import { v4 as uuidv4 } from 'uuid';
+import path from 'path';
 import device from 'express-device';
 import cookieParser from "cookie-parser";
 import dotenv from 'dotenv';
@@ -128,80 +128,80 @@ app.get("/home/:username", isLoggedIn, async (req, res) => {
 
 });
 
-// /**************************************************************************************************************************************/
-// app.get("/profile", isLoggedIn, (req, res) => {
-//     const username = req.session.passport.user;
-//     res.redirect("/profile/" + username);
-// });
+/**************************************************************************************************************************************/
+app.get("/profile", isLoggedIn, (req, res) => {
+    const username = req.session.passport.user;
+    res.redirect("/profile/" + username);
+});
 
-// app.get("/profile/:username", isLoggedIn, async (req, res) => {
-//     try {
-//         if (req.params.username !== req.session.passport.user) {
-//             res.redirect("/login");
-//         } else {
-//             const userDetails = await user.findOne({ username: req.session.passport.user })
-//             res.render("profile.ejs", {
-//                 profileImage: userDetails.profileImage,
-//                 username: userDetails.username,
-//                 fullname: userDetails.fullname,
-//                 noOfFrds: userDetails.friends.length,
-//                 description: userDetails.description
-//             });
-//         }
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
+app.get("/profile/:username", isLoggedIn, async (req, res) => {
+    try {
+        if (req.params.username !== req.session.passport.user) {
+            res.redirect("/login");
+        } else {
+            const userDetails = await user.findOne({ username: req.session.passport.user })
+            res.render("profile.ejs", {
+                profileImage: userDetails.profileImage,
+                username: userDetails.username,
+                fullname: userDetails.fullname,
+                noOfFrds: userDetails.friends.length,
+                description: userDetails.description
+            });
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
 
-// });
+});
 
-// app.post('/profileupload', isLoggedIn, upload.single("image"), async (req, res, next) => {
-//     const userDetails = await user.findOne({ username: req.session.passport.user })
-//     userDetails.profileImage = req.file.filename;
-//     await userDetails.save();
-//     res.redirect("/profile");
+app.post('/profileupload', isLoggedIn, upload.single("image"), async (req, res, next) => {
+    const userDetails = await user.findOne({ username: req.session.passport.user })
+    userDetails.profileImage = req.file.filename;
+    await userDetails.save();
+    res.redirect("/profile");
 
-// });
+});
 
-// app.post("/description", isLoggedIn, async (req, res) => {
-//     try {
-//         const desc = req.body.description;
-//         await user.updateOne(
-//             { username: req.session.passport.user },
-//             { description: desc }
-//         );
-//         res.redirect("/profile");
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// });
+app.post("/description", isLoggedIn, async (req, res) => {
+    try {
+        const desc = req.body.description;
+        await user.updateOne(
+            { username: req.session.passport.user },
+            { description: desc }
+        );
+        res.redirect("/profile");
+    }
+    catch (err) {
+        console.log(err);
+    }
+});
 
-// app.get("/view-profile/:username", async (req, res) => {
-//     try {
-//         const userDetails = await user.findOne({ username: req.params.username })
-//         let from = req.query.From;
-//         if (from === undefined) {
-//             from = "home";
-//         }
+app.get("/view-profile/:username", async (req, res) => {
+    try {
+        const userDetails = await user.findOne({ username: req.params.username })
+        let from = req.query.From;
+        if (from === undefined) {
+            from = "home";
+        }
 
-//         res.render("viewProfile.ejs", {
-//             location: from,
-//             profileImage: userDetails.profileImage,
-//             username: userDetails.username,
-//             fullname: userDetails.fullname,
-//             noOfFrds: userDetails.friends.length,
-//             description: userDetails.description
-//         });
+        res.render("viewProfile.ejs", {
+            location: from,
+            profileImage: userDetails.profileImage,
+            username: userDetails.username,
+            fullname: userDetails.fullname,
+            noOfFrds: userDetails.friends.length,
+            description: userDetails.description
+        });
 
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
+    }
+    catch (err) {
+        console.log(err);
+    }
 
-// });
+});
 
-// /**************************************************************************************************************************************/
+/**************************************************************************************************************************************/
 
 app.get("/logout", isLoggedIn, (req, res) => {
     const username = req.session.passport.user;
