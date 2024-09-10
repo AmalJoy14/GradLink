@@ -53,10 +53,18 @@ body{
     font-family: "Noto Sans";
     font-size:25px;
 }
-.logodiv>img{
-    height:3.5cm;
-    width: 3.5cm;
+.logodiv>.imglogodiv{
+    height:2.5cm;
+    width: 2.5cm;
+    background-image: url("../images/GradLink.png");
+    
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    object-fit: cover;
+    background-size: 150px 150px;
 }
+
 .registerform{
     display: flex;
     flex-direction: column;
