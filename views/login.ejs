@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenTalk</title>
+
+    <link rel="icon" href="/images/OpenTalkLogo.png">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="registerpage">
+        <div class="register">
+            <div class="logodiv">
+                <img src="./images/OpenTalkLogo.png"
+                    alt="logo"><span>p</span><span>e</span><span>n</span><span>T</span><span>a</span><span>l</span><span>k</span>
+            </div>
+
+            <form class="registerform" action="/login" method="post">
+                <div class="firstContainer">
+                    <p class="seemore">Login to your Account</p>
+                    <% if(locals.error.length > 0){ %>
+                        <p class="error"><%= error %></p>
+                      <% } %>
+                    <input type="text" name="username" placeholder="Username" required />
+                    <input type="password" name="password" placeholder="Password" required />
+                    <a class="nothaveaccount" href="./register">Don't have an account?</a>
+                </div>
+                <div class="secondContainer">
+                    <button type="submit">Sign in</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./javascripts/registerAndLogin.js"></script>
+</body>
+
+
+</html>
