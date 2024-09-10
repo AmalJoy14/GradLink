@@ -99,24 +99,41 @@ app.get("/home", isLoggedIn, (req, res) => {
 
 app.get("/home/:username", isLoggedIn, async (req, res) => {
     try {
-      const searchQuery = req.query.search;
-  
-      if (req.params.username !== req.session.passport.user) {
-        res.redirect("/login");
-      }
-      else {
-        
-  
-        res.render("home" , {
-          username: req.session.passport.user
-        });
-      }
+        const searchQuery = req.query.search;
+
+        if (req.params.username !== req.session.passport.user) {
+            res.redirect("/login");
+        }
+        else {
+
+
+            res.render("home", {
+                username: req.session.passport.user
+            });
+        }
     }
     catch (err) {
-      console.log(err);
+        console.log(err);
     }
-  
-  });
+
+});
+
+app.get("/logout", isLoggedIn, (req, res) => {
+    const username = req.session.passport.user;
+    res.redirect("/logout/" + username);
+});
+
+app.get("/logout/:username", isLoggedIn, (req, res, next) => {
+
+    req.logout((err) => {
+        if (err) {
+            return next(err);
+        }
+        onlineUsers.splice(onlineUsers.indexOf(req.params.username), 1);
+        res.clearCookie('connect.sid');
+        res.redirect("/login");
+    });
+});
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
