@@ -1,0 +1,319 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: "Noto Sans";
+}
+
+body{
+    width:100%;
+    height:100vh;
+    
+}
+   
+.maindiv{
+    height:100%;
+    width:100%;
+    border-radius: 10px;
+    background-color:#E2E4E9;
+    display: flex;
+    gap:5px;
+    padding:25px;
+}
+.firstinnerdiv{
+    min-width:80px;
+    height:100%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    display:flex;
+    padding:20px 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.firstinnerdiv>img{
+    max-width:45px;
+}
+.optionlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+    min-height: 195px;
+
+}
+.option{
+    color:#ffffff;
+    font-size:24px;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+.option:hover{
+    color: #FF6606;  
+}
+
+.logout{
+    width:43px;
+    height:43px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #FF6606;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:30px;
+    background-color: transparent;
+    border: none;
+}
+.secondinnerdiv{
+    width:100%;
+    height:100%;
+    background-color: rgba(202, 21, 255, 0);
+    border-radius: 10px;
+    background-color: #ed630d;
+    display: flex;
+    gap:5px;
+    justify-content: center;
+    align-items: center;
+}
+.addUserContainer{
+    height: 550px;
+    width: 410px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.addUserContainer h2{
+    margin-top: 20px;
+    font-size: larger;
+}
+.addUserContainer hr {
+    width: 94%;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.addUserContainer h4 {
+    font-size: small;
+    color: #7b7b7b;
+}
+
+input{
+    margin-top: 5px;
+    border-radius: 10px;
+    width: 275px;
+    height: 30px;
+    border: 2px solid rgb(178, 182, 182);
+    padding-left: 8px;
+}
+.submitBtn{
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    width: 80px;
+    background-color: rgb(255, 102, 6);
+    color: white;
+    font-weight: 500;
+}
+.existingUserGroup{
+    margin-top: 10px;
+    width: 100%;
+    height: calc( 100% - 185px);
+    list-style-type: none;
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+/* Hide scrollbar for WebKit browsers */
+ul::-webkit-scrollbar {
+    display: none;
+  }
+
+li{
+    height: 60px;
+    width:100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.323);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:15px;
+    position: relative;
+}
+.userdetails{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px;
+    flex-wrap: wrap;
+    color: #000000;
+    min-width: 70%;
+    height: 100%;
+}
+
+.profile{
+    height:40px;
+    width:40px;
+    background-color: #B1B1B1;
+    border-radius: 50%;
+   position: relative;
+    display: flex;
+    justify-content: center;
+}
+.profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.description p{
+    font-size: x-small;
+}
+.btnAdd{
+    position: absolute;
+    right: 0px;
+    bottom: 15px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    background-color: #b9f7bbff;
+    color: green;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btnPending{
+    position: absolute;
+    right: 0px;
+    bottom: 15px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    background-color: rgb(216, 212, 212);
+    color: grey;
+    font-weight: 500;
+}
+.btnRemove{
+    position: absolute;
+    right: 0px;
+    bottom: 15px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    background-color: rgb(242, 198, 198);
+    color: red;
+    font-weight: 500;
+    cursor: pointer;
+}
+.noUserFoundImage{
+    width: 366.6px;
+    height: 340px;
+    object-fit: cover;
+}
+
+
+.receivedrequests{
+    height: 550px;
+    width: 290px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.receivedrequests>hr{
+    margin-bottom: 10px;
+    margin-top: 15px;
+    border: none;
+    border-bottom:1px solid rgb(184, 184, 184);
+}
+.requestsdiv{
+    width:100%;
+    scrollbar-width: none;
+    height:calc(100% - 50px);
+    overflow: auto;
+}
+.user1{
+    width:100%; 
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(206, 206, 206);
+    padding:7px 5px;
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+.userdetails2nd{
+    width:100%;
+   height:80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:10px;
+    background-color: rgb(255, 255, 255);
+}
+.userarea{
+    background-color: rgba(0, 255, 255, 0);
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:10px;
+}
+.buttons{
+    width:100%;
+    height:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.accept{
+    width:80px;
+    height:25px;
+    border:none;
+    border-radius: 10px;
+    background-color: green;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:7px;
+    color:white;
+    font-size: 12px;
+}
+.reject{
+    width:80px;
+    height:25px;
+    border:none;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:7px;
+    color:white;
+    font-size: 12px;
+    background-color: rgb(255, 0, 0);
+}
+.norequests{
+    width:100%;
+    height:calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.norequests>img{
+    width:200px;
+}

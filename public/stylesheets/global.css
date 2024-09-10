@@ -1,0 +1,322 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family:   Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    
+    
+}
+.maindiv{
+    padding:25px;
+    width:100%;
+    height:100%;
+    background-color:#E2E4E9;
+    display: flex;
+    gap:5px;
+}
+.firstdiv{
+    height:100%;
+    width:88%;
+    border-radius: 10px;
+    background-color:#E2E4E9;
+    display: flex;
+    gap:5px;
+}
+.firstinnerdiv{
+    min-width:80px;
+    height:100%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    display:flex;
+    padding:20px 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.firstinnerdiv>img{
+    max-width:45px;
+}
+.optionlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+    min-height: 195px;
+}
+.option{
+    color:#ffffff;
+    font-size:24px;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+.option:hover{
+    color: #FF6606;  
+}
+.logout{
+    width:43px;
+    height:43px;
+    cursor: pointer;
+    text-decoration: none;
+    color:#FF6606;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:30px;
+    background-color: transparent;
+    border: none;
+}
+.secondinnerdiv{
+    height:100%;
+    width:calc(100% - 85px);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap:10px;
+    padding:15px;
+}
+
+#globalForm{
+    width:100%;
+    height:40px;
+    background-color:#E1E3E8;
+    display: flex;
+    justify-content:space-between;
+    border-radius: 20px;
+    align-items: center;
+}
+#globalForm>#globalInput{
+    width:90%;
+    height:40px;
+    background-color: transparent;
+    border:2px solid grey;
+    border-radius: 20px;
+    padding:0px 25px;
+    color: #000000;
+    resize: none;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+#globalForm>button{
+    width:40px;
+    height:40px;
+    font-size: 24px;
+    border-radius: 50%;
+    border:none;
+    color: white;
+    background-color: #FF6606;
+}
+
+#globalMessagediv{
+    padding:10px 10px;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-wrap: normal;
+    background-color:#E1E3E8;
+    border-radius: 10px;
+    gap:2px;
+    scroll-behavior: smooth;
+}
+
+
+
+.seconddiv{
+    height:100%;
+    width:17%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    border-radius: 10px;
+}
+.thirdinnerdiv{
+    position: relative;
+    width:100%;
+    height:44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:35px;
+    color: white;
+    border-radius: 40px;
+    background-color: #FF6606;
+}
+.globe{
+    position: relative;
+    color: #000000;
+}
+.online{
+    width:8px;
+    height:8px;
+    background-color: rgb(0, 255, 0);
+    border-radius: 50%;
+    position: absolute;
+    bottom:3px;
+    right:3px;
+    border:1px solid black;
+}s
+.thirdinnerdiv>h4{
+    color: rgb(255, 255, 255);
+}
+.globalimg{
+    width:40px;
+    height:40px;
+    background-color: #ffffff;
+    border-radius: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    left:0%;
+    font-size: 30px;
+    border: 2px solid rgb(255, 119, 0);
+}
+.fourthinnerdiv{
+    width:100%;
+    height:100%;
+    background-color: #000000;
+    border-radius: 10px;
+    padding:10px 10px;
+    color:white;
+
+}
+.fourthinnerdiv>p{
+    color:grey;
+    font-weight:700;
+    font-size: smaller;
+}
+.onlineusers{
+    width:100%;
+    height:100%;
+    overflow: auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    background-color: #0a0a0a00;
+}
+.user1{
+    width:98%;
+    padding:10px 10px;
+    height:50px;
+    background-color: rgb(51, 51, 51);
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap:10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.onlineusers::-webkit-scrollbar {
+    width: 5px; 
+
+ }
+
+.onlineusers::-webkit-scrollbar-track {
+  background-color:#E2E4E9;
+}
+
+.onlineusers::-webkit-scrollbar-thumb {
+  background: #FF6606;
+  border-radius:0px;
+}
+.profile{
+    height:35px;
+    width:35px;
+    background-color:  #B1B1B1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ffffff;
+}
+.profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.user1>.description{
+    font-size:11px;
+}
+.mymessage{
+    width:100%;
+    display: flex;
+    justify-content:flex-start ;
+    overflow-wrap: break-word;
+}
+
+.mymessage>span{
+    padding:5px 10px;
+    background-color: #FF6606;
+    border-radius: 20px;
+    border-top-left-radius:0px;
+    color:white;
+    font-size: 20px;
+    max-width: 90%;
+    line-height: 19px;
+    white-space: pre-wrap;
+}
+.mymessage>span>.mynametag{
+    font-size: 12px;
+    font-family:'Segoe UI';
+    font-weight: 500;
+    color:black;
+}
+.othermessage{
+
+    width:100%;
+    display: flex;
+    justify-content:flex-end;
+    overflow-wrap: break-word;
+}
+.othermessage>span{
+    padding:5px 10px;
+    background-color: #000000;
+    border-radius: 20px;
+    border-top-right-radius:0px;
+    color:white;
+     display: flex;
+    flex-direction: column; 
+    font-size: 20px;
+    max-width: 90%;
+    line-height: 19px;
+    white-space: pre-wrap;
+}
+    
+
+.othermessage>span>.othernametag{
+    font-size: 12px;
+    font-family:'Segoe UI';
+    font-weight: 500;
+    color:#FF6606;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#globalMessagediv::-webkit-scrollbar {
+    width: 5px; 
+ }
+
+#globalMessagediv::-webkit-scrollbar-track {
+  background-color:#00000000;
+  border-radius:30px ;
+}
+
+#globalMessagediv::-webkit-scrollbar-thumb {
+  background: #FF6606;
+  border-radius:30px;
+}

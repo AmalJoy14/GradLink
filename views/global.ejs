@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenTalk</title>
+    <link rel="icon" href="/images/OpenTalkLogo.png">
+    <link rel="stylesheet" href="/stylesheets/global.css">
+    <link rel="stylesheet" href="/stylesheets/logout.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="logoutContainer">
+        <h1>Log out <i class="ri-logout-box-r-line"></i></h1>
+        <p>Are you sure you want to log out ?</p>
+        <div class="logoutButtonContainer">
+            <button class="button1">OK</button><button class="button2">CANCEL</button>
+        </div>
+    </div>
+    <div class="maindiv">
+        <div class="firstdiv">
+            <div class="firstinnerdiv">
+                <img src="/images/OpenTalkLogo.png" alt="logo">
+                <div class="optionlist">
+                    <a href="/profile" class="option"><i class="ri-map-pin-user-line"></i></a>
+                    <a href="/home" class="option"><i class="ri-group-2-line friends"></i></a>
+                    <a href="/addUser" class="option"><i class="ri-user-add-line adduser"></i></a>
+                    <a href="/global" style="color: rgb(255, 102, 6);" class="option"><i class="ri-earth-line global"></i></a>
+                </div>
+                <button class="logout"><i class="ri-logout-box-line"></i></button>
+            </div>
+            <div class="secondinnerdiv">
+                <div id="globalMessagediv">
+                </div>
+                
+                    <form id="globalForm" username="<%=username%>" action="">
+                        <textarea id="globalInput"  placeholder="Enter your Message"></textarea>
+                        <button type="submit"><i class="ri-arrow-right-up-line"></i></button>
+                    </form>
+            </div>
+        
+            </div>
+        <div class="seconddiv">
+            <div class="thirdinnerdiv">
+                <div class="globalimg">
+                    <i class="ri-global-line globe">
+                        <div class="online"></div>
+                    </i>
+                    
+                </div>
+                <h4><%= online %> USER</h4>
+            </div>
+            <div class="fourthinnerdiv">
+                <p>ONLINE USERS</p>
+                <div class="onlineusers">
+
+                    <% for (let user of onlineUsersList) {%>
+                    <div class="user1">
+                        <div class="profile" >    
+                            <img src="/images/uploads/<%= user.profileImage %>" alt="Profile Image" onerror="this.onerror=null; this.src='/images/uploads/noProfileImage.png';">
+                        </div>
+                        <div class="description">
+                            <h3><%= user.fullname %></h3>
+                            <h6><%= user.username %></h6>
+                        </div>
+                    </div>
+                    <% } %>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/global.js"></script>
+<script src="/javascripts/logout.js"></script>
+</html>
