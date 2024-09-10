@@ -317,7 +317,7 @@ body{
     cursor: pointer;
     border:none;
     color: white;
-    background-color: #FF6606;
+    background-color: #3077c9;
 }
 
 #homeMessagediv{
@@ -343,7 +343,7 @@ body{
 }
 .mymessage>span{
     padding:5px 10px;
-    background-color: #FF6606;
+    background-color:#3077c9;
     border-radius: 20px;
     border-top-left-radius:0px;
     color:white;
@@ -383,7 +383,7 @@ body{
     font-size: 12px;
     font-family:'Segoe UI';
     font-weight: 500;
-    color:#FF6606;
+    color:#3077c9;
     display: flex;
     justify-content: flex-end;
 }
@@ -416,6 +416,6 @@ body{
 }
 
 .friendlist::-webkit-scrollbar-thumb {
-  background: #FF6606;
+  background: #3077c9;
   border-radius:30px;
 }
