@@ -16,7 +16,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/GradLink')
 const app = express();
 const PORT = 3000;
 
-
+let onlineUsers = [];
 
 app.set("view engine", "ejs");
 
@@ -96,6 +96,27 @@ app.get("/home", isLoggedIn, (req, res) => {
     }
     res.redirect(redirectUrl);
 });
+
+app.get("/home/:username", isLoggedIn, async (req, res) => {
+    try {
+      const searchQuery = req.query.search;
+  
+      if (req.params.username !== req.session.passport.user) {
+        res.redirect("/login");
+      }
+      else {
+        
+  
+        res.render("home" , {
+          username: req.session.passport.user
+        });
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  
+  });
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
