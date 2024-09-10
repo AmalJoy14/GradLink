@@ -30,9 +30,7 @@
             <form class="registerform" action="/login" method="post">
                 <div class="firstContainer">
                     <p class="seemore">Login to your Account</p>
-                    <% if(locals.error.length > 0){ %>
-                        <p class="error"><%= error %></p>
-                      <% } %>
+                    
                     <input type="text" name="username" placeholder="Username" required />
                     <input type="password" name="password" placeholder="Password" required />
                     <a class="nothaveaccount" href="./register">Don't have an account?</a>
