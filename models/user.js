@@ -7,6 +7,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
       },
+      profileImage: {
+        type: String,
+        default : 'noProfileImage.png'
+      },
       password: {
         type: String,
         required:true
@@ -15,7 +19,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      
+      friends: [String],
+      reqSend: [String],
+      reqReceived: [String],
+
+      description : {
+        type: String,
+        default : 'Welcome To My Profile'
+      },
+      addUserBtnState :{
+        type: String,
+        default: false
+      }
 });
 
 userSchema.plugin(plm);
