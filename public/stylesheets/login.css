@@ -97,7 +97,7 @@ body{
 button{
     cursor: pointer;
     padding:15px 25px;
-    background-color: rgb(255, 102, 6);
+    background-color: #2063b0;
     color: rgb(255, 255, 255);
     border-radius: 10px;
     font-size: larger;
