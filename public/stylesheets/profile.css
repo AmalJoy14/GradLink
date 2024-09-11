@@ -89,7 +89,7 @@ body{
     position: relative;
     width: 100%;
     padding: 5px;
-    background: url(../images/profilebg.jpg);
+    background-image: url(../images/profilebg.jpg);
     background-position: center;
     background-size: contain;
     display: flex;

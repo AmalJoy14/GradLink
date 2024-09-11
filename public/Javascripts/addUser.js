@@ -2,7 +2,7 @@
 const existingUsers = document.querySelector(".existingUserGroup");
 
 if (existingUsers.innerText===''){
-    existingUsers.innerHTML="<img class='noUserFoundImage' src='/images/noUsersFound.png'>";
+    existingUsers.innerHTML="<img class='noUserFoundImage' src='/images/noUsersFound.jpg'>";
 }
 
 //When no requests are found

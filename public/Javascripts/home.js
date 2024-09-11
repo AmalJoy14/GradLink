@@ -9,7 +9,7 @@ const messages = document.getElementById("homeMessagediv");
 const friendList = document.querySelector(".friendlist");
 
 if (friendList.innerText === '') {
-    friendList.innerHTML = "<img class='noUserFoundImage' src='/images/noUsersFound.png'>";
+    friendList.innerHTML = "<img class='noUserFoundImage' src='/images/noUsersFound.jpg'>";
     friendList.classList.add("center");
 }
 
